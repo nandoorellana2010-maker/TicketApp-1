@@ -22,7 +22,6 @@ namespace TicketApp.Models
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
-        [MaxLength(100), NotNull]
         public string Titulo { get; set; } = string.Empty;
 
         [NotNull]
