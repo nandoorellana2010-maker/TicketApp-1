@@ -31287,20 +31287,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lrene\\.nuget\\packages\\": {}
+    "C:\\Users\\btcal\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CEUTEC\\Progra2\\TicketApp\\TicketApp.csproj",
+      "projectUniqueName": "C:\\Proyectos\\TicketApp\\TicketApp.csproj",
       "projectName": "TicketApp",
-      "projectPath": "D:\\CEUTEC\\Progra2\\TicketApp\\TicketApp.csproj",
-      "packagesPath": "C:\\Users\\lrene\\.nuget\\packages\\",
-      "outputPath": "D:\\CEUTEC\\Progra2\\TicketApp\\obj\\",
+      "projectPath": "C:\\Proyectos\\TicketApp\\TicketApp.csproj",
+      "packagesPath": "C:\\Users\\btcal\\.nuget\\packages\\",
+      "outputPath": "C:\\Proyectos\\TicketApp\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "configFilePaths": [
-        "C:\\Users\\lrene\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\btcal\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0-android",
@@ -31384,12 +31384,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[10.0.8, 10.0.8]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.Android": {
             "privateAssets": "all"
@@ -31718,12 +31712,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[10.0.8, 10.0.8]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.iOS": {
             "privateAssets": "all"
@@ -32053,12 +32041,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[10.0.8, 10.0.8]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.MacCatalyst": {
             "privateAssets": "all"

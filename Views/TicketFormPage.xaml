@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TicketApp.Views.TicketFormPage"
+             Title="Formulario Ticket">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Registro de Ticket"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Entry Placeholder="Título"
+                   Text="{Binding Titulo}" />
+
+            <Editor Placeholder="Descripción"
+                    Text="{Binding Descripcion}"
+                    HeightRequest="120" />
+
+            <Picker Title="Prioridad"
+                    ItemsSource="{Binding Prioridades}"
+                    SelectedItem="{Binding Prioridad}" />
+
+            <Picker Title="Estado"
+                    ItemsSource="{Binding Estados}"
+                    SelectedItem="{Binding Estado}"
+                    IsVisible="{Binding EsEdicion}" />
+
+            <Entry Placeholder="Responsable"
+                   Text="{Binding Responsable}" />
+
+            <Button Text="Guardar"
+                    Command="{Binding GuardarTicketCommand}" />
+
+            <Button Text="Cancelar"
+                    Command="{Binding CancelarCommand}" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

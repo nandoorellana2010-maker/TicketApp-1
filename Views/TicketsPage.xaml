@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TicketApp.Views.TicketsPage"
+             Title="Tickets">
+
+    <Grid RowDefinitions="Auto,*" Padding="20" RowSpacing="15">
+
+        <VerticalStackLayout Grid.Row="0" Spacing="10">
+            <Label Text="Sistema de Tickets"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Button Text="+ Nuevo Ticket"
+                    Command="{Binding NuevoTicketCommand}" />
+        </VerticalStackLayout>
+
+        <RefreshView Grid.Row="1"
+                     Command="{Binding CargarTicketsCommand}"
+                     IsRefreshing="{Binding IsBusy}">
+
+            <CollectionView ItemsSource="{Binding Tickets}">
+                <CollectionView.EmptyView>
+                    <Label Text="No hay tickets registrados."
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           FontSize="18" />
+                </CollectionView.EmptyView>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Stroke="LightGray"
+                                StrokeThickness="1"
+                                Padding="15"
+                                Margin="0,5">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="12" />
+                            </Border.StrokeShape>
+
+                            <VerticalStackLayout Spacing="8">
+
+                                <Label Text="{Binding Titulo}"
+                                       FontSize="20"
+                                       FontAttributes="Bold" />
+
+                                <Label Text="{Binding Descripcion}"
+                                       FontSize="14" />
+
+                                <Label Text="{Binding Prioridad, StringFormat='Prioridad: {0}'}" />
+
+                                <Label Text="{Binding Estado, StringFormat='Estado: {0}'}" />
+
+                                <Label Text="{Binding Responsable, StringFormat='Responsable: {0}'}" />
+
+                                <Label Text="{Binding FechaCreacion, StringFormat='Creado: {0:dd/MM/yyyy HH:mm}'}"
+                                       FontSize="12" />
+
+                                <Label Text="{Binding FechaUltimoCambioEstado, StringFormat='Último cambio: {0:dd/MM/yyyy HH:mm}'}"
+                                       FontSize="12" />
+
+                                <HorizontalStackLayout Spacing="8">
+
+                                    <Button Text="Editar"
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.EditarTicketCommand}"
+                                            CommandParameter="{Binding}" />
+
+                                    <Button Text="Eliminar"
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.EliminarTicketCommand}"
+                                            CommandParameter="{Binding}" />
+
+                                    <Button Text="Cambiar Estado"
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.CambiarEstadoCommand}"
+                                            CommandParameter="{Binding}" />
+                                </HorizontalStackLayout>
+
+                            </VerticalStackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </RefreshView>
+
+    </Grid>
+</ContentPage>
